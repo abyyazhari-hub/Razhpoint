@@ -2749,3 +2749,776 @@ background:#32ff88;
 transform:scale(1.2);
 
 }
+
+/* =====================================================
+   PRODUCT PAGE
+===================================================== */
+
+.product-detail{
+
+padding-top:140px;
+
+padding-bottom:90px;
+
+}
+
+.detail-grid{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:60px;
+
+align-items:start;
+
+}
+
+/* ==========================
+GALLERY
+========================== */
+
+.gallery{
+
+background:var(--card);
+
+padding:25px;
+
+border-radius:25px;
+
+border:1px solid rgba(255,255,255,.06);
+
+}
+
+.gallery img{
+
+width:100%;
+
+border-radius:18px;
+
+display:block;
+
+}
+
+.thumbnail{
+
+display:flex;
+
+gap:15px;
+
+margin-top:20px;
+
+}
+
+.thumbnail img{
+
+width:90px;
+
+height:90px;
+
+object-fit:cover;
+
+cursor:pointer;
+
+border-radius:12px;
+
+transition:.3s;
+
+border:2px solid transparent;
+
+}
+
+.thumbnail img:hover{
+
+border-color:var(--primary);
+
+transform:scale(1.05);
+
+}
+
+/* ==========================
+DETAIL
+========================== */
+
+.detail-info{
+
+background:var(--card);
+
+padding:35px;
+
+border-radius:25px;
+
+border:1px solid rgba(255,255,255,.06);
+
+}
+
+.game-tag{
+
+display:inline-block;
+
+padding:8px 18px;
+
+background:rgba(50,255,136,.15);
+
+color:var(--primary);
+
+border-radius:30px;
+
+font-size:13px;
+
+font-weight:600;
+
+margin-bottom:18px;
+
+}
+
+.detail-info h1{
+
+font-size:42px;
+
+margin-bottom:15px;
+
+}
+
+.detail-info .rating{
+
+color:#FFD54A;
+
+font-size:18px;
+
+margin-bottom:20px;
+
+}
+
+.detail-info .price{
+
+font-size:42px;
+
+font-weight:800;
+
+color:var(--primary);
+
+margin-bottom:25px;
+
+}
+
+/* ==========================
+FEATURE LIST
+========================== */
+
+.feature-list{
+
+list-style:none;
+
+display:flex;
+
+flex-direction:column;
+
+gap:15px;
+
+margin-bottom:35px;
+
+}
+
+.feature-list li{
+
+padding:14px 18px;
+
+background:var(--bg2);
+
+border-radius:14px;
+
+color:var(--text);
+
+}
+
+/* ==========================
+ACTION BUTTON
+========================== */
+
+.action{
+
+display:flex;
+
+gap:15px;
+
+}
+
+.action .buy-btn{
+
+flex:1;
+
+}
+
+.action .sell-btn{
+
+flex:1;
+
+}
+
+/* =====================================================
+   PRODUCT PAGE PART 2
+===================================================== */
+
+/* ==========================
+SELLER PROFILE
+========================== */
+
+.seller-profile{
+
+padding:90px 0;
+
+}
+
+.seller-card{
+
+background:linear-gradient(180deg,#181d26,#11161d);
+
+border-radius:25px;
+
+padding:35px;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+gap:30px;
+
+border:1px solid rgba(255,255,255,.06);
+
+}
+
+.seller-avatar img{
+
+width:90px;
+
+height:90px;
+
+border-radius:50%;
+
+object-fit:cover;
+
+border:3px solid var(--primary);
+
+}
+
+.seller-detail{
+
+flex:1;
+
+}
+
+.seller-detail h2{
+
+font-size:30px;
+
+margin-bottom:8px;
+
+}
+
+.seller-detail p{
+
+color:var(--primary);
+
+font-weight:600;
+
+margin-bottom:10px;
+
+}
+
+.seller-rating{
+
+color:#FFD54A;
+
+font-size:18px;
+
+}
+
+.seller-action{
+
+display:flex;
+
+align-items:center;
+
+}
+
+/* ==========================
+DESCRIPTION
+========================== */
+
+.description{
+
+padding:90px 0;
+
+}
+
+.description p{
+
+background:var(--card);
+
+padding:35px;
+
+border-radius:22px;
+
+line-height:2;
+
+color:var(--text2);
+
+border:1px solid rgba(255,255,255,.06);
+
+}
+
+/* ==========================
+PAYMENT
+========================== */
+
+.payment{
+
+padding:90px 0;
+
+}
+
+.payment-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
+
+gap:20px;
+
+}
+
+.pay-card{
+
+background:var(--card);
+
+padding:30px;
+
+text-align:center;
+
+font-size:18px;
+
+font-weight:700;
+
+border-radius:18px;
+
+border:1px solid rgba(255,255,255,.06);
+
+transition:.35s;
+
+cursor:pointer;
+
+}
+
+.pay-card:hover{
+
+transform:translateY(-8px);
+
+border-color:var(--primary);
+
+color:var(--primary);
+
+}
+
+/* ==========================
+REVIEW
+========================== */
+
+.review{
+
+padding:90px 0;
+
+}
+
+.review-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+gap:25px;
+
+}
+
+.review-card{
+
+background:var(--card);
+
+padding:30px;
+
+border-radius:20px;
+
+border:1px solid rgba(255,255,255,.06);
+
+transition:.35s;
+
+}
+
+.review-card:hover{
+
+transform:translateY(-8px);
+
+border-color:var(--primary);
+
+}
+
+.review-card h3{
+
+font-size:22px;
+
+margin-bottom:15px;
+
+color:#FFD54A;
+
+}
+
+.review-card p{
+
+line-height:1.8;
+
+color:var(--text2);
+
+margin-bottom:20px;
+
+}
+
+.review-card strong{
+
+color:var(--primary);
+
+}
+
+/* =====================================================
+   PRODUCT PAGE PART 3
+===================================================== */
+
+/* ==========================
+GUARANTEE
+========================== */
+
+.guarantee{
+
+padding:90px 0;
+
+}
+
+.guarantee-box{
+
+background:linear-gradient(135deg,#18232d,#10161f);
+
+padding:60px;
+
+border-radius:30px;
+
+border:1px solid rgba(255,255,255,.06);
+
+text-align:center;
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.guarantee-box::before{
+
+content:"";
+
+position:absolute;
+
+width:400px;
+
+height:400px;
+
+background:rgba(50,255,136,.08);
+
+border-radius:50%;
+
+right:-150px;
+
+top:-150px;
+
+filter:blur(40px);
+
+}
+
+.guarantee-box h2{
+
+font-size:42px;
+
+margin-bottom:20px;
+
+position:relative;
+
+z-index:2;
+
+}
+
+.guarantee-box p{
+
+max-width:700px;
+
+margin:auto;
+
+line-height:1.9;
+
+color:var(--text2);
+
+position:relative;
+
+z-index:2;
+
+}
+
+/* ==========================
+CONTACT
+========================== */
+
+.contact{
+
+padding:100px 0;
+
+}
+
+.contact-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+gap:25px;
+
+}
+
+.contact-card{
+
+background:var(--card);
+
+padding:35px;
+
+border-radius:22px;
+
+border:1px solid rgba(255,255,255,.06);
+
+transition:.35s;
+
+text-align:center;
+
+}
+
+.contact-card:hover{
+
+transform:translateY(-8px);
+
+border-color:var(--primary);
+
+box-shadow:0 20px 50px rgba(50,255,136,.12);
+
+}
+
+.contact-card h3{
+
+font-size:24px;
+
+margin-bottom:15px;
+
+}
+
+.contact-card p{
+
+color:var(--text2);
+
+line-height:1.8;
+
+}
+
+/* ==========================
+RELATED PRODUCT
+========================== */
+
+.products{
+
+padding:100px 0;
+
+}
+
+.products .product-card{
+
+transition:.35s;
+
+}
+
+.products .product-card:hover{
+
+transform:translateY(-12px);
+
+box-shadow:0 25px 60px rgba(0,0,0,.45);
+
+}
+
+/* ==========================
+HOVER EFFECT
+========================== */
+
+.gallery img{
+
+transition:.35s;
+
+}
+
+.gallery img:hover{
+
+transform:scale(1.03);
+
+}
+
+.buy-btn,
+.sell-btn{
+
+transition:.3s;
+
+}
+
+.buy-btn:hover{
+
+box-shadow:0 20px 45px rgba(50,255,136,.30);
+
+}
+
+.sell-btn:hover{
+
+background:var(--bg2);
+
+}
+
+/* ==========================
+RESPONSIVE
+========================== */
+
+@media(max-width:992px){
+
+.detail-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.seller-card{
+
+flex-direction:column;
+
+text-align:center;
+
+}
+
+.action{
+
+flex-direction:column;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.product-detail{
+
+padding-top:100px;
+
+}
+
+.detail-info{
+
+padding:25px;
+
+}
+
+.detail-info h1{
+
+font-size:32px;
+
+}
+
+.detail-info .price{
+
+font-size:34px;
+
+}
+
+.thumbnail{
+
+justify-content:center;
+
+flex-wrap:wrap;
+
+}
+
+.thumbnail img{
+
+width:75px;
+
+height:75px;
+
+}
+
+.guarantee-box{
+
+padding:40px 25px;
+
+}
+
+.guarantee-box h2{
+
+font-size:30px;
+
+}
+
+.contact-card{
+
+padding:25px;
+
+}
+
+.payment-grid{
+
+grid-template-columns:1fr 1fr;
+
+}
+
+}
+
+@media(max-width:480px){
+
+.payment-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.review-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.contact-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.detail-info h1{
+
+font-size:28px;
+
+}
+
+.detail-info .price{
+
+font-size:28px;
+
+}
+
+}
