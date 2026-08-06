@@ -5,19 +5,24 @@
 
 <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
-<title>RAZHPOINT | Marketplace Akun Game</title>
+<title>RAZHPOINT | Marketplace Akun Game Indonesia</title>
 
-<meta name="description" content="Marketplace Jual Beli Akun Game Indonesia">
+<meta name="description"
+content="Marketplace Jual Beli Akun Game Indonesia">
 
 <link rel="stylesheet" href="style.css">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet">
 
 <script src="app.js" defer></script>
 
@@ -25,31 +30,53 @@
 
 <body>
 
-<!-- ================= HEADER ================= -->
+<!-- ==========================
+LOADING
+=========================== -->
+
+<div id="loader">
+
+<div class="loader-logo">
+
+RP
+
+</div>
+
+<p>Loading Marketplace...</p>
+
+</div>
+
+<!-- ==========================
+HEADER
+=========================== -->
 
 <header>
 
-<div class="container">
+<div class="container nav">
 
-<div class="logo">
+<a class="logo">
 
-<div class="logo-icon">
+<div class="logo-box">
+
 RP
+
 </div>
 
 <div>
 
 <h2>RAZHPOINT</h2>
 
-<p>Marketplace Akun Game Indonesia</p>
+<span>
+Marketplace Akun Game
+</span>
 
 </div>
 
-</div>
+</a>
 
 <nav>
 
-<a href="#">Home</a>
+<a href="#home">Home</a>
 
 <a href="#market">Marketplace</a>
 
@@ -59,23 +86,20 @@ RP
 
 </nav>
 
-<div>
+<div class="nav-right">
 
 <input
-
 type="text"
-
+id="search"
 placeholder="Cari akun game..."
-
-class="search"
-
 >
 
-<a href="#" class="login-btn">
+<button
+class="login-btn">
 
 Masuk
 
-</a>
+</button>
 
 </div>
 
@@ -83,30 +107,27 @@ Masuk
 
 </header>
 
-<!-- ================= HERO ================= -->
+<!-- ==========================
+HERO
+=========================== -->
 
-<section class="hero">
+<section
+class="hero"
+id="home">
 
 <div class="container hero-grid">
 
-<div>
+<div class="hero-left">
 
-<div class="badge">
+<span class="badge">
 
-🔥 MARKETPLACE AKUN GAME TERPERCAYA
-
-</div>
-
-<h1>
-
-Temukan
-
-<span>
-
-Akun Game
+🔥 Marketplace Akun Game Terpercaya
 
 </span>
 
+<h1>
+
+Temukan Akun Game
 Impianmu
 
 </h1>
@@ -114,48 +135,213 @@ Impianmu
 <p>
 
 Jual beli akun Mobile Legends,
-
 PUBG Mobile,
-
 Free Fire,
-
 Valorant,
-
 Steam,
-
-dan game lainnya.
-
-Seller terpercaya,
-
-proses cepat,
-
-dan transaksi aman.
+Genshin Impact
+dan ratusan game lainnya.
 
 </p>
 
-<div class="hero-buttons">
+<div class="hero-button">
 
-<a href="#market" class="btn-primary">
+<button class="buy-btn">
 
 Beli Akun
 
-</a>
+</button>
 
-<a href="#seller" class="btn-outline">
+<button class="sell-btn">
 
 Jual Akun
 
+</button>
+
+</div>
+
+<div class="hero-info">
+
+<div>
+
+<h3>
+
+10.000+
+
+</h3>
+
+<p>
+
+Akun Dijual
+
+</p>
+
+</div>
+
+<div>
+
+<h3>
+
+6.500+
+
+</h3>
+
+<p>
+
+Seller Aktif
+
+</p>
+
+</div>
+
+<div>
+
+<h3>
+
+98%
+
+</h3>
+
+<p>
+
+Transaksi Berhasil
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="hero-right">
+
+<div class="hero-card">
+
+<div class="hero-card-title">
+
+PUBG MOBILE
+
+</div>
+
+<div class="hero-price">
+
+Rp 2.350.000
+
+</div>
+
+<ul>
+
+<li>✔ Mummy Set</li>
+
+<li>✔ Glacier M416</li>
+
+<li>✔ Conqueror</li>
+
+<li>✔ 200+ Mythic Skin</li>
+
+</ul>
+
+<button>
+
+Lihat Detail
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section> <!-- ==========================
+BANNER
+=========================== -->
+
+<section class="banner">
+
+<div class="container">
+
+<div class="banner-slider">
+
+<div class="banner-item active">
+
+<div class="banner-content">
+
+<h2>
+Diskon Hingga 70%
+</h2>
+
+<p>
+
+Promo spesial akun game premium
+minggu ini.
+
+</p>
+
+<a href="#market" class="banner-btn">
+
+Belanja Sekarang
+
 </a>
 
 </div>
 
 </div>
 
-<div class="hero-image">
+<div class="banner-item">
 
-<div class="hero-card">
+<div class="banner-content">
 
-RP
+<h2>
+
+Seller Terverifikasi
+
+</h2>
+
+<p>
+
+Semua seller telah melalui proses
+verifikasi.
+
+</p>
+
+<a href="#seller"
+class="banner-btn">
+
+Lihat Seller
+
+</a>
+
+</div>
+
+</div>
+
+<div class="banner-item">
+
+<div class="banner-content">
+
+<h2>
+
+Transaksi Aman
+
+</h2>
+
+<p>
+
+Sistem escrow membuat transaksi
+lebih aman.
+
+</p>
+
+<a href="#faq"
+class="banner-btn">
+
+Pelajari
+
+</a>
+
+</div>
 
 </div>
 
@@ -165,9 +351,13 @@ RP
 
 </section>
 
-<!-- ================= CATEGORY ================= -->
+<!-- ==========================
+CATEGORY
+=========================== -->
 
-<section class="category">
+<section
+class="category"
+id="market">
 
 <div class="container">
 
@@ -201,7 +391,29 @@ Mobile Legends
 
 <p>
 
-1.245 Akun
+2.100 Akun
+
+</p>
+
+</div>
+
+<div class="category-card">
+
+<div class="category-icon">
+
+🔫
+
+</div>
+
+<h3>
+
+PUBG Mobile
+
+</h3>
+
+<p>
+
+1.540 Akun
 
 </p>
 
@@ -223,7 +435,7 @@ Free Fire
 
 <p>
 
-845 Akun
+1.830 Akun
 
 </p>
 
@@ -233,19 +445,19 @@ Free Fire
 
 <div class="category-icon">
 
-🪖
+⚔️
 
 </div>
 
 <h3>
 
-PUBG Mobile
+Valorant
 
 </h3>
 
 <p>
 
-4 Akun
+850 Akun
 
 </p>
 
@@ -255,29 +467,7 @@ PUBG Mobile
 
 <div class="category-icon">
 
-⚽
-
-</div>
-
-<h3>
-
-FC Mobile
-
-</h3>
-
-<p>
-
-300 Akun
-
-</p>
-
-</div>
-
-<div class="category-card">
-
-<div class="category-icon">
-
-💦
+🌀
 
 </div>
 
@@ -289,7 +479,7 @@ Genshin Impact
 
 <p>
 
-210 Akun
+730 Akun
 
 </p>
 
@@ -299,7 +489,7 @@ Genshin Impact
 
 <div class="category-icon">
 
-🖥️
+💻
 
 </div>
 
@@ -311,7 +501,7 @@ Steam
 
 <p>
 
-710 Akun
+620 Akun
 
 </p>
 
@@ -322,10 +512,11 @@ Steam
 </div>
 
 </section>
+<!-- ==========================
+FEATURED MARKETPLACE
+=========================== -->
 
-  <!-- ================= FEATURED PRODUCTS ================= -->
-
-<section class="products" id="market">
+<section class="products">
 
 <div class="container">
 
@@ -337,11 +528,13 @@ Steam
 
 <p class="section-subtitle">
 
-Akun pilihan dengan kualitas terbaik
+Akun game pilihan dengan seller terpercaya
 
 </p>
 
 <div class="product-grid">
+
+<!-- PRODUCT 1 -->
 
 <div class="product-card">
 
@@ -373,7 +566,7 @@ Mythic 200 Skin
 
 <p class="product-desc">
 
-200+ Skin, 12 Collector, 8 Legend, Emblem Full.
+Skin Legend • Collector • Emblem Max • Bind Aman
 
 </p>
 
@@ -402,6 +595,8 @@ Lihat Detail
 </div>
 
 </div>
+
+<!-- PRODUCT 2 -->
 
 <div class="product-card">
 
@@ -433,7 +628,7 @@ Conqueror X-Suit
 
 <p class="product-desc">
 
-Glacier M416, X-Suit, Mythic Outfit, Royale Pass Max.
+Glacier M416 • X-Suit • Mythic Outfit • Royale Pass
 
 </p>
 
@@ -463,6 +658,8 @@ Lihat Detail
 
 </div>
 
+<!-- PRODUCT 3 -->
+
 <div class="product-card">
 
 <div class="product-image">
@@ -487,7 +684,7 @@ Sultan Bundle
 
 <p class="product-desc">
 
-Bundle Langka, Evo Gun, Emote Premium, Akun Veteran.
+Bundle Langka • Evo Gun • Emote Premium
 
 </p>
 
@@ -515,6 +712,117 @@ Lihat Detail
 
 </div>
 
+</
+  <!-- PRODUCT 5 -->
+
+<div class="product-card">
+
+<div class="product-image">
+
+GEN
+
+</div>
+
+<div class="product-content">
+
+<span class="product-game">
+
+Genshin Impact
+
+</span>
+
+<h3 class="product-title">
+
+AR60 Full Character
+
+</h3>
+
+<p class="product-desc">
+
+Nahida • Furina • Raiden • Neuvillette • Banyak Senjata Bintang 5
+
+</p>
+
+<div class="product-info">
+
+<div class="price">
+
+Rp5.500.000
+
+</div>
+
+<div class="rating">
+
+★★★★★
+
+</div>
+
+</div>
+
+<a href="#" class="buy-btn">
+
+Lihat Detail
+
+</a>
+
+</div>
+
+</div>
+
+<!-- PRODUCT 6 -->
+
+<div class="product-card">
+
+<div class="product-image">
+
+STM
+
+</div>
+
+<div class="product-content">
+
+<span class="product-game">
+
+Steam
+
+</span>
+
+<h3 class="product-title">
+
+Steam Premium Library
+
+</h3>
+
+<p class="product-desc">
+
+300+ Game • GTA V • Elden Ring • Cyberpunk 2077
+
+</p>
+
+<div class="product-info">
+
+<div class="price">
+
+Rp3.200.000
+
+</div>
+
+<div class="rating">
+
+★★★★★
+
+</div>
+
+</div>
+
+<a href="#" class="buy-btn">
+
+Lihat Detail
+
+</a>
+
+</div>
+
 </div>
 
 </div>
@@ -523,7 +831,9 @@ Lihat Detail
 
 </section>
 
-<!-- ================= PROMO ================= -->
+<!-- ==========================
+SELLER PANEL
+=========================== -->
 
 <section class="seller" id="seller">
 
@@ -533,22 +843,32 @@ Lihat Detail
 
 <h2>
 
-🚀 Jual Akunmu di RAZHPOINT
+🚀 Jadilah Seller di RAZHPOINT
 
 </h2>
 
 <p>
 
-Gabung menjadi seller RAZHPOINT dan jual akun game dengan mudah.
-Website kami dirancang agar proses transaksi lebih cepat, aman, dan nyaman.
+Upload akun game kamu dan jual dengan cepat.
+Semua transaksi akan dikelola melalui marketplace RAZHPOINT.
 
 </p>
 
-<a href="#" class="btn-primary">
+<div class="hero-button">
 
-Mulai Menjadi Seller
+<button class="buy-btn">
 
-</a>
+Daftar Seller
+
+</button>
+
+<button class="sell-btn">
+
+Pelajari Selengkapnya
+
+</button>
+
+</div>
 
 </div>
 
@@ -556,37 +876,39 @@ Mulai Menjadi Seller
 
 </section>
 
-  <!-- ================= FAQ ================= -->
+<!-- ==========================
+STATISTICS
+=========================== -->
 
-<section class="category" id="faq">
+<section class="category">
 
 <div class="container">
 
 <h2 class="section-title">
 
-Pertanyaan Umum
+Statistik Marketplace
 
 </h2>
-
-<p class="section-subtitle">
-
-Beberapa pertanyaan yang sering ditanyakan.
-
-</p>
 
 <div class="category-grid">
 
 <div class="category-card">
 
+<div class="category-icon">
+
+👥
+
+</div>
+
 <h3>
 
-Apakah akun aman?
+125.000+
 
 </h3>
 
 <p>
 
-Ya. Semua akun akan diverifikasi sebelum ditampilkan di marketplace.
+Pengguna Terdaftar
 
 </p>
 
@@ -594,15 +916,21 @@ Ya. Semua akun akan diverifikasi sebelum ditampilkan di marketplace.
 
 <div class="category-card">
 
+<div class="category-icon">
+
+🛒
+
+</div>
+
 <h3>
 
-Metode pembayaran?
+350.000+
 
 </h3>
 
 <p>
 
-Transfer Bank, QRIS, dan E-Wallet (akan ditambahkan pada versi berikutnya).
+Transaksi
 
 </p>
 
@@ -610,15 +938,43 @@ Transfer Bank, QRIS, dan E-Wallet (akan ditambahkan pada versi berikutnya).
 
 <div class="category-card">
 
+<div class="category-icon">
+
+⭐
+
+</div>
+
 <h3>
 
-Bagaimana menjual akun?
+98%
 
 </h3>
 
 <p>
 
-Daftar sebagai seller, lalu unggah akun melalui dashboard seller.
+Rating Positif
+
+</p>
+
+</div>
+
+<div class="category-card">
+
+<div class="category-icon">
+
+🏆
+
+</div>
+
+<h3>
+
+5.200+
+
+</h3>
+
+<p>
+
+Seller Aktif
 
 </p>
 
@@ -629,8 +985,69 @@ Daftar sebagai seller, lalu unggah akun melalui dashboard seller.
 </div>
 
 </section>
+  <!-- ==========================
+FAQ
+=========================== -->
 
-<!-- ================= FOOTER ================= -->
+<section class="faq" id="faq">
+
+<div class="container">
+
+<h2 class="section-title">
+
+Pertanyaan yang Sering Diajukan
+
+</h2>
+
+<p class="section-subtitle">
+
+Semua yang perlu kamu ketahui sebelum bertransaksi.
+
+</p>
+
+<div class="faq-list">
+
+<div class="faq-item">
+
+<h3>Apakah akun dijamin aman?</h3>
+
+<p>Ya. Semua akun yang ditampilkan telah melalui proses verifikasi seller dan pemeriksaan data dasar sebelum dipublikasikan.</p>
+
+</div>
+
+<div class="faq-item">
+
+<h3>Metode pembayaran apa saja?</h3>
+
+<p>Versi berikutnya akan mendukung QRIS, Transfer Bank, E-Wallet, dan Payment Gateway.</p>
+
+</div>
+
+<div class="faq-item">
+
+<h3>Bagaimana cara menjadi seller?</h3>
+
+<p>Daftar akun, lengkapi profil seller, lalu unggah akun game melalui dashboard seller.</p>
+
+</div>
+
+<div class="faq-item">
+
+<h3>Apakah ada biaya komisi?</h3>
+
+<p>Komisi akan diterapkan sesuai kebijakan marketplace dan akan ditampilkan secara transparan.</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ==========================
+FOOTER
+=========================== -->
 
 <footer>
 
@@ -648,9 +1065,7 @@ RAZHPOINT
 
 <p class="footer-text">
 
-Marketplace jual beli akun game Indonesia.
-
-Aman, cepat, dan terpercaya.
+Marketplace jual beli akun game dengan tampilan modern, transaksi aman, dan seller terpercaya.
 
 </p>
 
@@ -674,6 +1089,8 @@ Marketplace
 
 <a href="#">Valorant</a>
 
+<a href="#">Steam</a>
+
 </div>
 
 </div>
@@ -692,9 +1109,9 @@ Bantuan
 
 <a href="#">Kontak</a>
 
-<a href="#">Kebijakan</a>
+<a href="#">Syarat & Ketentuan</a>
 
-<a href="#">Syarat</a>
+<a href="#">Kebijakan Privasi</a>
 
 </div>
 
@@ -747,3 +1164,4 @@ Made with ❤️ in Indonesia
 </body>
 
 </html>
+  
