@@ -1,1 +1,455 @@
-<!doctype html><html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>RAZHPOINT — Marketplace Akun Game</title><link rel="stylesheet" href="style.css"></head><body><header><div class="logo"><b>RP</b> RAZHPOINT</div><nav><a href="#home">Home</a><a href="#market">Marketplace</a><a href="#jual">Jual Akun</a></nav><button onclick="alert('Login akan kita sambungkan pada tahap database.')">Masuk</button></header><main><section id="home" class="hero"><div><small>MARKETPLACE AKUN GAME</small><h1>Temukan akun game <em>impianmu.</em></h1><p>RAZHPOINT — tempat jual beli akun game dengan tampilan simpel, cepat, dan nyaman.</p><a href="#market">Lihat Marketplace</a></div><div class="brand">RP<small>RAZHPOINT</small></div></section><section id="market"><small>MARKETPLACE</small><h2>Akun terbaru</h2><input id="search" placeholder="Cari akun atau game..." oninput="render()"><div class="filters"><button onclick="setFilter('Semua')">Semua</button><button onclick="setFilter('Mobile Legends')">Mobile Legends</button><button onclick="setFilter('Free Fire')">Free Fire</button><button onclick="setFilter('PUBG Mobile')">PUBG Mobile</button></div><div id="products"></div></section><section id="jual" class="seller"><small>UNTUK SELLER</small><h2>Punya akun game untuk dijual?</h2><p>Dashboard seller dan sistem order akan kita aktifkan setelah frontend berhasil online.</p></section></main><footer>RAZHPOINT · Marketplace Akun Game · © 2026</footer><script src="app.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>RAZHPOINT | Marketplace Akun Game</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet">
+
+<script src="app.js" defer></script>
+
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="navbar">
+
+<div class="logo">
+
+<div class="logo-box">
+
+RP
+
+</div>
+
+<div class="logo-text">
+
+<h2>RAZHPOINT</h2>
+
+<p>Marketplace Akun Game</p>
+
+</div>
+
+</div>
+
+<nav>
+
+<a href="#">Home</a>
+
+<a href="#">Marketplace</a>
+
+<a href="#">Seller</a>
+
+<a href="#">Tentang</a>
+
+</nav>
+
+<div class="right-menu">
+
+<input
+type="text"
+placeholder="Cari akun game..."
+class="search">
+
+<button class="login">
+
+Masuk
+
+</button>
+
+</div>
+
+</header>
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+<div class="hero-left">
+
+<span class="badge">
+
+MARKETPLACE AKUN GAME TERPERCAYA
+
+</span>
+
+<h1>
+
+Temukan
+
+<span>
+
+Akun Game
+
+</span>
+
+Impianmu
+
+</h1>
+
+<p>
+
+Jual beli akun Mobile Legends,
+
+PUBG Mobile,
+
+Free Fire,
+
+Valorant,
+
+Steam,
+
+dan game lainnya
+
+dengan aman.
+
+</p>
+
+<div class="hero-button">
+
+<button class="buy">
+
+Beli Akun
+
+</button>
+
+<button class="sell">
+
+Jual Akun
+
+</button>
+
+</div>
+
+</div>
+
+<div class="hero-right">
+
+<div class="hero-card">
+
+<div class="hero-image">
+
+RP
+
+</div>
+
+<h3>
+
+MYTHIC 200 SKIN
+
+</h3>
+
+<p>
+
+Mobile Legends
+
+</p>
+
+<h2>
+
+Rp2.500.000
+
+</h2>
+
+<button>
+
+Lihat Detail
+
+</button>
+
+</div>
+
+</div>
+
+</section><!-- ================= KATEGORI GAME ================= -->
+
+<section class="category">
+
+<h2>Kategori Game</h2>
+
+<div class="category-grid">
+
+<div class="category-card">
+<div class="icon">🎮</div>
+<h3>Mobile Legends</h3>
+<p>1.245 Akun</p>
+</div>
+
+<div class="category-card">
+<div class="icon">🔥</div>
+<h3>Free Fire</h3>
+<p>845 Akun</p>
+</div>
+
+<div class="category-card">
+<div class="icon">🪖</div>
+<h3>PUBG Mobile</h3>
+<p>624 Akun</p>
+</div>
+
+<div class="category-card">
+<div class="icon">⚽</div>
+<h3>FC Mobile</h3>
+<p>325 Akun</p>
+</div>
+
+<div class="category-card">
+<div class="icon">💎</div>
+<h3>Genshin Impact</h3>
+<p>284 Akun</p>
+</div>
+
+<div class="category-card">
+<div class="icon">🖥️</div>
+<h3>Steam</h3>
+<p>702 Akun</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= FEATURED ACCOUNT ================= -->
+
+<section class="featured">
+
+<div class="section-title">
+
+<h2>🔥 Featured Accounts</h2>
+
+<a href="#">Lihat Semua</a>
+
+</div>
+
+<div class="product-grid">
+
+<!-- CARD 1 -->
+
+<div class="product">
+
+<div class="product-image">
+
+MLBB
+
+</div>
+
+<div class="product-body">
+
+<span class="game">
+
+Mobile Legends
+
+</span>
+
+<h3>
+
+Mythic 200 Skin
+
+</h3>
+
+<p>
+
+Skin Collector • Skin Legend • Emote Lengkap
+
+</p>
+
+<div class="price">
+
+Rp2.500.000
+
+</div>
+
+<button>
+
+Lihat Detail
+
+</button>
+
+</div>
+
+</div>
+
+<!-- CARD 2 -->
+
+<div class="product">
+
+<div class="product-image">
+
+PUBG
+
+</div>
+
+<div class="product-body">
+
+<span class="game">
+
+PUBG Mobile
+
+</span>
+
+<h3>
+
+Conqueror Rare
+
+</h3>
+
+<p>
+
+X-Suit • Glacier M416 • Mythic Outfit
+
+</p>
+
+<div class="price">
+
+Rp3.750.000
+
+</div>
+
+<button>
+
+Lihat Detail
+
+</button>
+
+</div>
+
+</div>
+
+<!-- CARD 3 -->
+
+<div class="product">
+
+<div class="product-image">
+
+FF
+
+</div>
+
+<div class="product-body">
+
+<span class="game">
+
+Free Fire
+
+</span>
+
+<h3>
+
+Sultan Bundle
+
+</h3>
+
+<p>
+
+Bundle Lama • Evo Gun • Emote Premium
+
+</p>
+
+<div class="price">
+
+Rp1.450.000
+
+</div>
+
+<button>
+
+Lihat Detail
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= WHY RAZHPOINT ================= -->
+
+<section class="why">
+
+<h2>
+
+Kenapa Memilih RAZHPOINT?
+
+</h2>
+
+<div class="why-grid">
+
+<div>
+
+<h3>🛡️ Aman</h3>
+
+<p>
+
+Semua transaksi melalui sistem marketplace.
+
+</p>
+
+</div>
+
+<div>
+
+<h3>⚡ Cepat</h3>
+
+<p>
+
+Proses transaksi hanya beberapa menit.
+
+</p>
+
+</div>
+
+<div>
+
+<h3>⭐ Terpercaya</h3>
+
+<p>
+
+Seller diverifikasi dan memiliki rating.
+
+</p>
+
+</div>
+
+<div>
+
+<h3>💬 Support 24 Jam</h3>
+
+<p>
+
+Tim siap membantu kapan saja.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+</footer>
+
+</body>
+</html>
