@@ -1,66 +1,167 @@
-/* =====================================
+/* ===========================================
    RAZHPOINT V2
-===================================== */
+   APP.JS PART 1
+=========================================== */
 
-console.log("RAZHPOINT Loaded");
+console.log("RAZHPOINT V2 Loaded");
 
-/* ===========================
-NAVBAR
-=========================== */
+/* ==========================
+LOADER
+========================== */
 
-const header = document.querySelector("header");
+window.addEventListener("load",()=>{
+
+document.body.classList.add("loaded");
+
+setTimeout(()=>{
+
+const loader=document.getElementById("loader");
+
+if(loader){
+
+loader.remove();
+
+}
+
+},500);
+
+});
+
+/* ==========================
+HEADER
+========================== */
+
+const header=document.querySelector("header");
 
 window.addEventListener("scroll",()=>{
 
-if(window.scrollY>50){
+if(window.scrollY>40){
 
-header.style.background="rgba(5,15,10,.95)";
-header.style.boxShadow="0 15px 40px rgba(0,0,0,.4)";
+header.style.background="rgba(8,12,18,.95)";
+
+header.style.boxShadow="0 15px 40px rgba(0,0,0,.35)";
 
 }else{
 
-header.style.background="rgba(10,20,15,.88)";
+header.style.background="rgba(10,13,18,.85)";
+
 header.style.boxShadow="none";
 
 }
 
 });
 
-/* ===========================
-BUTTON
-=========================== */
+/* ==========================
+SMOOTH BUTTON
+========================== */
 
-document.querySelectorAll(".buy-btn").forEach(button=>{
+document.querySelectorAll("a[href^='#']").forEach(link=>{
 
-button.addEventListener("click",(e)=>{
-
-e.preventDefault();
-
-alert("Fitur Detail Akun akan tersedia di RAZHPOINT V3.");
-
-});
-
-});
-
-/* ===========================
-LOGIN
-=========================== */
-
-const login=document.querySelector(".login-btn");
-
-if(login){
-
-login.onclick=(e)=>{
+link.onclick=function(e){
 
 e.preventDefault();
 
-alert("Login akan dihubungkan ke Firebase.");
+const target=document.querySelector(this.getAttribute("href"));
+
+if(target){
+
+target.scrollIntoView({
+
+behavior:"smooth"
+
+});
 
 }
 
-/* ===========================
+}
+
+});
+
+/* ==========================
+SEARCH
+========================== */
+
+const search=document.getElementById("search");
+
+if(search){
+
+search.addEventListener("keyup",()=>{
+
+const value=search.value.toLowerCase();
+
+document.querySelectorAll(".product-card").forEach(card=>{
+
+const text=card.innerText.toLowerCase();
+
+card.style.display=text.includes(value)?"block":"none";
+
+});
+
+});
+
+}
+
+/* ==========================
+BUY BUTTON
+========================== */
+
+document.querySelectorAll(".buy-btn").forEach(btn=>{
+
+btn.addEventListener("click",(e)=>{
+
+if(btn.tagName==="A"){
+
+e.preventDefault();
+
+}
+
+alert("Fitur pembelian akan segera tersedia.");
+
+});
+
+});
+
+/* ==========================
+SCROLL TO TOP
+========================== */
+
+const topBtn=document.createElement("div");
+
+topBtn.id="scrollTop";
+
+topBtn.innerHTML="↑";
+
+document.body.appendChild(topBtn);
+
+window.addEventListener("scroll",()=>{
+
+if(window.scrollY>400){
+
+topBtn.classList.add("show");
+
+}else{
+
+topBtn.classList.remove("show");
+
+}
+
+});
+
+topBtn.onclick=()=>{
+
+window.scrollTo({
+
+top:0,
+
+behavior:"smooth"
+
+});
+
+};
+
+/* ==========================
 ANIMATION
-=========================== */
+========================== */
 
 const observer=new IntersectionObserver((entries)=>{
 
@@ -78,7 +179,7 @@ entry.target.style.transform="translateY(0)";
 
 });
 
-document.querySelectorAll(".category-card,.product-card,.seller-box").forEach(el=>{
+document.querySelectorAll(".product-card,.category-card,.seller-box,.faq-item").forEach(el=>{
 
 el.style.opacity="0";
 
@@ -90,53 +191,52 @@ observer.observe(el);
 
 });
 
-  /* ===========================
-SEARCH
-=========================== */
+/* ==========================
+BANNER AUTO SLIDE
+========================== */
 
-const search=document.querySelector(".search");
+const banners=document.querySelectorAll(".banner-item");
 
-if(search){
+let current=0;
 
-search.addEventListener("keyup",()=>{
+if(banners.length){
 
-const value=search.value.toLowerCase();
+setInterval(()=>{
 
-document.querySelectorAll(".product-card").forEach(card=>{
+banners[current].classList.remove("active");
 
-const text=card.innerText.toLowerCase();
+current++;
 
-if(text.includes(value)){
+if(current>=banners.length){
 
-card.style.display="block";
-
-}else{
-
-card.style.display="none";
+current=0;
 
 }
 
-});
+banners[current].classList.add("active");
 
-});
+},4000);
 
 }
-/* ===========================
-WELCOME
-=========================== */
 
-setTimeout(()=>{
+/* ==========================
+LOGIN
+========================== */
 
-console.log("Selamat datang di RAZHPOINT");
+const login=document.querySelector(".login-btn");
 
-},1000);
+if(login){
 
-/* ===========================
-COPYRIGHT
-=========================== */
+login.onclick=()=>{
 
-console.log("© RAZHPOINT 2026");
+alert("Login Firebase akan ditambahkan pada versi berikutnya.");
 
-/* ===========================
+};
+
+}
+
+/* ==========================
 END
-=========================== */
+========================== */
+
+console.log("RAZHPOINT Ready 🚀");
