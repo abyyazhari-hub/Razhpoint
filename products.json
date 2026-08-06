@@ -1,0 +1,26 @@
+[
+  {
+    "name":"FF Sultan Evo",
+    "game":"Free Fire",
+    "price":"Rp2.500.000",
+    "image":"assets/images/ff1.jpg"
+  },
+  {
+    "name":"FF Bundle Langka",
+    "game":"Free Fire",
+    "price":"Rp1.250.000",
+    "image":"assets/images/ff2.jpg"
+  },
+  {
+    "name":"MLBB Mythic 120 Skin",
+    "game":"Mobile Legends",
+    "price":"Rp3.200.000",
+    "image":"assets/images/ml1.jpg"
+  },
+  {
+    "name":"MLBB Collector",
+    "game":"Mobile Legends",
+    "price":"Rp1.850.000",
+    "image":"assets/images/ml2.jpg"
+  }
+]
