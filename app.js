@@ -1,1 +1,142 @@
-const data=[['Mobile Legends','MLBB Mythic — Skin Premium',850000,'ML'],['Free Fire','FF Sultan — Bundle Lengkap',650000,'FF'],['PUBG Mobile','PUBGM — Koleksi Rare',1200000,'PUBG'],['Mobile Legends','MLBB — Skin Collector',1500000,'ML'],['Free Fire','FF — Akun Veteran',450000,'FF'],['PUBG Mobile','PUBGM — Skin Senjata Rare',980000,'PUBG']];let filter='Semua';function setFilter(x){filter=x;render()}function render(){let q=(document.querySelector('#search').value||'').toLowerCase();let a=data.filter(x=>(filter==='Semua'||x[0]===filter)&&(x[0]+' '+x[1]).toLowerCase().includes(q));document.querySelector('#products').innerHTML=a.map(x=>`<article class="card"><div class="thumb">${x[3]}</div><div class="body"><small>${x[0]}</small><h3>${x[1]}</h3><p>Detail akun premium</p><div class="price">Rp ${x[2].toLocaleString('id-ID')}</div><button onclick="alert('Halaman detail dan checkout akan ditambahkan pada tahap berikutnya.')">Lihat Detail</button></div></article>`).join('')}render();
+/* =====================================
+   RAZHPOINT V2
+===================================== */
+
+console.log("RAZHPOINT Loaded");
+
+/* ===========================
+NAVBAR
+=========================== */
+
+const header = document.querySelector("header");
+
+window.addEventListener("scroll",()=>{
+
+if(window.scrollY>50){
+
+header.style.background="rgba(5,15,10,.95)";
+header.style.boxShadow="0 15px 40px rgba(0,0,0,.4)";
+
+}else{
+
+header.style.background="rgba(10,20,15,.88)";
+header.style.boxShadow="none";
+
+}
+
+});
+
+/* ===========================
+BUTTON
+=========================== */
+
+document.querySelectorAll(".buy-btn").forEach(button=>{
+
+button.addEventListener("click",(e)=>{
+
+e.preventDefault();
+
+alert("Fitur Detail Akun akan tersedia di RAZHPOINT V3.");
+
+});
+
+});
+
+/* ===========================
+LOGIN
+=========================== */
+
+const login=document.querySelector(".login-btn");
+
+if(login){
+
+login.onclick=(e)=>{
+
+e.preventDefault();
+
+alert("Login akan dihubungkan ke Firebase.");
+
+}
+
+/* ===========================
+ANIMATION
+=========================== */
+
+const observer=new IntersectionObserver((entries)=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.style.opacity="1";
+
+entry.target.style.transform="translateY(0)";
+
+}
+
+});
+
+});
+
+document.querySelectorAll(".category-card,.product-card,.seller-box").forEach(el=>{
+
+el.style.opacity="0";
+
+el.style.transform="translateY(50px)";
+
+el.style.transition=".7s";
+
+observer.observe(el);
+
+});
+
+  /* ===========================
+SEARCH
+=========================== */
+
+const search=document.querySelector(".search");
+
+if(search){
+
+search.addEventListener("keyup",()=>{
+
+const value=search.value.toLowerCase();
+
+document.querySelectorAll(".product-card").forEach(card=>{
+
+const text=card.innerText.toLowerCase();
+
+if(text.includes(value)){
+
+card.style.display="block";
+
+}else{
+
+card.style.display="none";
+
+}
+
+});
+
+});
+
+}
+/* ===========================
+WELCOME
+=========================== */
+
+setTimeout(()=>{
+
+console.log("Selamat datang di RAZHPOINT");
+
+},1000);
+
+/* ===========================
+COPYRIGHT
+=========================== */
+
+console.log("© RAZHPOINT 2026");
+
+/* ===========================
+END
+=========================== */
