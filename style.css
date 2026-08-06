@@ -1,16 +1,756 @@
-/* ======================
-SECTION TITLE
-====================== */
+/* =====================================================
+   RAZHPOINT V2
+   Part 1 - Reset, Theme, Layout & Header
+===================================================== */
 
-.section-title{
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 
-text-align:center;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+:root{
+
+    --primary:#32ff88;
+    --primary-dark:#18c96a;
+
+    --bg:#0a0d12;
+    --bg2:#11151d;
+
+    --card:#171c25;
+
+    --border:#2b3443;
+
+    --text:#ffffff;
+    --text2:#9ca3af;
+
+    --danger:#ff3d57;
+    --warning:#ffb703;
+
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:var(--bg);
+
+    color:var(--text);
+
+    overflow-x:hidden;
+
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:var(--primary);
+
+    border-radius:20px;
+
+}
+
+a{
+
+    color:inherit;
+
+    text-decoration:none;
+
+}
+
+img{
+
+    max-width:100%;
+
+}
+
+button{
+
+    cursor:pointer;
+
+    font-family:inherit;
+
+}
+
+.container{
+
+    width:min(1250px,92%);
+
+    margin:auto;
+
+}
+
+/* ===================================
+LOADER
+=================================== */
+
+#loader{
+
+    position:fixed;
+
+    inset:0;
+
+    background:#07090d;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:20px;
+
+    z-index:99999;
+
+}
+
+.loader-logo{
+
+    width:90px;
+
+    height:90px;
+
+    border-radius:25px;
+
+    background:linear-gradient(135deg,var(--primary),var(--primary-dark));
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:#000;
+
+    font-size:36px;
+
+    font-weight:800;
+
+    animation:pulse 1.2s infinite;
+
+}
+
+@keyframes pulse{
+
+0%{
+
+transform:scale(1);
+
+}
+
+50%{
+
+transform:scale(1.08);
+
+}
+
+100%{
+
+transform:scale(1);
+
+}
+
+}
+
+/* ===================================
+HEADER
+=================================== */
+
+header{
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    right:0;
+
+    z-index:999;
+
+    background:rgba(10,13,18,.85);
+
+    backdrop-filter:blur(18px);
+
+    border-bottom:1px solid rgba(255,255,255,.05);
+
+}
+
+.nav{
+
+    height:85px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+.logo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+}
+
+.logo-box{
+
+    width:55px;
+
+    height:55px;
+
+    border-radius:18px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:linear-gradient(135deg,var(--primary),var(--primary-dark));
+
+    color:#000;
+
+    font-size:22px;
+
+    font-weight:800;
+
+}
+
+.logo h2{
+
+    font-size:24px;
+
+    font-weight:700;
+
+}
+
+.logo span{
+
+    color:var(--text2);
+
+    font-size:13px;
+
+}
+
+nav{
+
+    display:flex;
+
+    gap:30px;
+
+}
+
+nav a{
+
+    color:var(--text2);
+
+    transition:.3s;
+
+    font-weight:500;
+
+}
+
+nav a:hover{
+
+    color:var(--primary);
+
+}
+
+.nav-right{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+}
+
+#search{
+
+    width:260px;
+
+    height:48px;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:14px;
+
+    padding:0 18px;
+
+    background:var(--bg2);
+
+    color:#fff;
+
+}
+
+.login-btn{
+
+    height:48px;
+
+    padding:0 25px;
+
+    border:none;
+
+    border-radius:14px;
+
+    background:linear-gradient(135deg,var(--primary),var(--primary-dark));
+
+    color:#000;
+
+    font-weight:700;
+
+    transition:.3s;
+
+}
+
+.login-btn:hover{
+
+    transform:translateY(-3px);
+
+}
+
+/* =====================================================
+   HERO SECTION
+===================================================== */
+
+.hero{
+
+    padding-top:140px;
+
+    padding-bottom:100px;
+
+    position:relative;
+
+}
+
+.hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:650px;
+
+    height:650px;
+
+    background:rgba(50,255,136,.08);
+
+    filter:blur(120px);
+
+    border-radius:50%;
+
+    right:-150px;
+
+    top:-120px;
+
+}
+
+.hero-grid{
+
+    display:grid;
+
+    grid-template-columns:1.1fr .9fr;
+
+    gap:70px;
+
+    align-items:center;
+
+}
+
+.hero-left{
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+.badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    padding:10px 20px;
+
+    border-radius:999px;
+
+    background:rgba(50,255,136,.12);
+
+    border:1px solid rgba(50,255,136,.3);
+
+    color:var(--primary);
+
+    font-weight:600;
+
+    margin-bottom:25px;
+
+}
+
+.hero h1{
+
+    font-size:64px;
+
+    line-height:1.1;
+
+    margin-bottom:20px;
+
+    font-weight:800;
+
+}
+
+.hero p{
+
+    color:var(--text2);
+
+    font-size:18px;
+
+    line-height:1.8;
+
+    max-width:650px;
+
+    margin-bottom:35px;
+
+}
+
+.hero-button{
+
+    display:flex;
+
+    gap:18px;
+
+    margin-bottom:45px;
+
+}
+
+.buy-btn{
+
+    height:55px;
+
+    padding:0 34px;
+
+    border:none;
+
+    border-radius:16px;
+
+    background:linear-gradient(135deg,var(--primary),var(--primary-dark));
+
+    color:#000;
+
+    font-weight:700;
+
+    transition:.3s;
+
+}
+
+.buy-btn:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 20px 40px rgba(50,255,136,.25);
+
+}
+
+.sell-btn{
+
+    height:55px;
+
+    padding:0 34px;
+
+    border-radius:16px;
+
+    border:1px solid var(--border);
+
+    background:transparent;
+
+    color:#fff;
+
+    transition:.3s;
+
+}
+
+.sell-btn:hover{
+
+    background:var(--bg2);
+
+}
+
+.hero-info{
+
+    display:flex;
+
+    gap:45px;
+
+    flex-wrap:wrap;
+
+}
+
+.hero-info h3{
+
+    font-size:32px;
+
+    color:var(--primary);
+
+}
+
+.hero-info p{
+
+    margin:6px 0 0;
+
+    font-size:14px;
+
+}
+
+/* ===================================
+HERO CARD
+=================================== */
+
+.hero-right{
+
+    display:flex;
+
+    justify-content:center;
+
+}
+
+.hero-card{
+
+    width:420px;
+
+    background:linear-gradient(180deg,#171c25,#0f141b);
+
+    border:1px solid rgba(255,255,255,.06);
+
+    border-radius:28px;
+
+    padding:30px;
+
+    box-shadow:0 25px 60px rgba(0,0,0,.45);
+
+}
+
+.hero-card-title{
+
+    font-size:28px;
+
+    font-weight:700;
+
+    margin-bottom:18px;
+
+}
+
+.hero-price{
+
+    font-size:38px;
+
+    color:var(--primary);
+
+    font-weight:800;
+
+    margin-bottom:25px;
+
+}
+
+.hero-card ul{
+
+    list-style:none;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+
+    margin-bottom:30px;
+
+}
+
+.hero-card li{
+
+    color:var(--text2);
+
+}
+
+.hero-card button{
+
+    width:100%;
+
+    height:52px;
+
+    border:none;
+
+    border-radius:15px;
+
+    background:linear-gradient(135deg,var(--primary),var(--primary-dark));
+
+    color:#000;
+
+    font-size:16px;
+
+    font-weight:700;
+
+    transition:.3s;
+
+}
+
+.hero-card button:hover{
+
+    transform:scale(1.02);
+
+}
+
+/* =====================================================
+   RAZHPOINT V2
+   Part 3 - Banner & Category
+===================================================== */
+
+/* ==========================
+BANNER
+========================== */
+
+.banner{
+
+padding:80px 0;
+
+}
+
+.banner-slider{
+
+background:linear-gradient(135deg,#19c86b,#0d7c42);
+
+border-radius:30px;
+
+padding:60px;
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.banner-slider::before{
+
+content:"";
+
+position:absolute;
+
+width:350px;
+
+height:350px;
+
+background:rgba(255,255,255,.08);
+
+border-radius:50%;
+
+right:-120px;
+
+top:-100px;
+
+}
+
+.banner-content{
+
+position:relative;
+
+z-index:2;
+
+}
+
+.banner-content h2{
 
 font-size:42px;
 
+font-weight:800;
+
+margin-bottom:15px;
+
+color:#fff;
+
+}
+
+.banner-content p{
+
+font-size:18px;
+
+line-height:1.8;
+
+max-width:600px;
+
+margin-bottom:30px;
+
+color:#eefdf5;
+
+}
+
+.banner-btn{
+
+display:inline-block;
+
+padding:15px 35px;
+
+border-radius:15px;
+
+background:#fff;
+
+color:#111;
+
 font-weight:700;
 
-margin-bottom:12px;
+transition:.3s;
+
+}
+
+.banner-btn:hover{
+
+transform:translateY(-3px);
+
+}
+
+/* ==========================
+CATEGORY
+========================== */
+
+.category{
+
+padding:100px 0;
+
+}
+
+.section-title{
+
+font-size:42px;
+
+font-weight:800;
+
+text-align:center;
+
+margin-bottom:10px;
 
 }
 
@@ -23,16 +763,6 @@ color:var(--text2);
 margin-bottom:60px;
 
 font-size:17px;
-
-}
-
-/* ======================
-CATEGORY
-====================== */
-
-.category{
-
-padding:90px 0;
 
 }
 
@@ -49,18 +779,22 @@ gap:25px;
 .category-card{
 
 background:var(--card);
+  
+position:relative;
+
+overflow:hidden;  
+
+border:1px solid rgba(255,255,255,.05);
+
+border-radius:22px;
 
 padding:35px;
 
-border-radius:22px;
+text-align:center;
 
 transition:.35s;
 
 cursor:pointer;
-
-border:1px solid rgba(255,255,255,.05);
-
-text-align:center;
 
 }
 
@@ -68,15 +802,15 @@ text-align:center;
 
 transform:translateY(-10px);
 
-border-color:var(--green);
+border-color:var(--primary);
 
-box-shadow:0 25px 50px rgba(0,255,120,.15);
+box-shadow:0 25px 60px rgba(50,255,136,.15);
 
 }
 
 .category-icon{
 
-font-size:55px;
+font-size:58px;
 
 margin-bottom:20px;
 
@@ -88,6 +822,8 @@ font-size:24px;
 
 margin-bottom:10px;
 
+font-weight:700;
+
 }
 
 .category-card p{
@@ -96,13 +832,46 @@ color:var(--text2);
 
 }
 
-/* ======================
+/* ==========================
+CATEGORY HOVER GLOW
+========================== */
+
+.category-card::after{
+
+content:"";
+
+position:absolute;
+
+inset:0;
+
+border-radius:22px;
+
+opacity:0;
+
+transition:.3s;
+
+box-shadow:0 0 40px rgba(50,255,136,.18);
+
+}
+
+.category-card:hover::after{
+
+opacity:1;
+
+}
+
+/* =====================================================
+   RAZHPOINT V2
+   Part 4 - Marketplace Product
+===================================================== */
+
+/* ==========================
 PRODUCT
-====================== */
+========================== */
 
 .products{
 
-padding:110px 0;
+padding:100px 0;
 
 }
 
@@ -116,9 +885,17 @@ gap:30px;
 
 }
 
+/* ==========================
+PRODUCT CARD
+========================== */
+
 .product-card{
 
-background:var(--card);
+position:relative;
+
+background:linear-gradient(180deg,#181d26,#11161d);
+
+border:1px solid rgba(255,255,255,.06);
 
 border-radius:24px;
 
@@ -126,17 +903,15 @@ overflow:hidden;
 
 transition:.35s;
 
-border:1px solid rgba(255,255,255,.05);
-
 }
 
 .product-card:hover{
 
 transform:translateY(-10px);
 
-box-shadow:0 25px 60px rgba(0,255,120,.15);
+border-color:var(--primary);
 
-border-color:var(--green);
+box-shadow:0 25px 60px rgba(50,255,136,.15);
 
 }
 
@@ -150,13 +925,13 @@ align-items:center;
 
 justify-content:center;
 
-background:linear-gradient(135deg,#183323,#101915);
+background:linear-gradient(135deg,#0f151d,#1d2631);
 
-font-size:70px;
+font-size:60px;
 
 font-weight:800;
 
-color:var(--green);
+color:var(--primary);
 
 }
 
@@ -170,13 +945,13 @@ padding:25px;
 
 display:inline-block;
 
-padding:6px 14px;
+padding:6px 15px;
 
 border-radius:50px;
 
-background:#183323;
+background:rgba(50,255,136,.12);
 
-color:var(--green);
+color:var(--primary);
 
 font-size:13px;
 
@@ -188,11 +963,11 @@ margin-bottom:15px;
 
 .product-title{
 
-font-size:28px;
+font-size:26px;
 
 font-weight:700;
 
-margin-bottom:15px;
+margin-bottom:12px;
 
 }
 
@@ -200,11 +975,15 @@ margin-bottom:15px;
 
 color:var(--text2);
 
-line-height:1.8;
+line-height:1.7;
 
-margin-bottom:20px;
+margin-bottom:22px;
 
 }
+
+/* ==========================
+PRICE
+========================== */
 
 .product-info{
 
@@ -214,7 +993,7 @@ justify-content:space-between;
 
 align-items:center;
 
-margin-bottom:20px;
+margin-bottom:25px;
 
 }
 
@@ -224,17 +1003,21 @@ font-size:30px;
 
 font-weight:800;
 
-color:var(--green);
+color:var(--primary);
 
 }
 
 .rating{
 
-color:#FFD700;
-
 font-size:18px;
 
+color:#FFD54A;
+
 }
+
+/* ==========================
+BUTTON
+========================== */
 
 .buy-btn{
 
@@ -242,19 +1025,19 @@ display:block;
 
 width:100%;
 
-padding:15px;
+height:52px;
 
-text-align:center;
+border:none;
 
 border-radius:15px;
 
-background:linear-gradient(135deg,#42ff88,#16dc61);
+background:linear-gradient(135deg,var(--primary),var(--primary-dark));
 
-color:#111;
+color:#000;
+
+font-size:15px;
 
 font-weight:700;
-
-text-decoration:none;
 
 transition:.3s;
 
@@ -266,25 +1049,25 @@ transform:scale(1.02);
 
 }
 
-/* ======================
-FEATURE BADGE
-====================== */
+/* ==========================
+BADGE
+========================== */
 
 .badge-hot{
 
 position:absolute;
 
-top:15px;
+top:18px;
 
-left:15px;
+left:18px;
 
-background:#ff3d3d;
-
-color:white;
-
-padding:8px 14px;
+padding:8px 15px;
 
 border-radius:30px;
+
+background:#ff3d57;
+
+color:#fff;
 
 font-size:12px;
 
@@ -296,17 +1079,17 @@ font-weight:700;
 
 position:absolute;
 
-top:15px;
+top:18px;
 
-right:15px;
+right:18px;
 
-background:var(--green);
-
-color:#111;
-
-padding:8px 14px;
+padding:8px 15px;
 
 border-radius:30px;
+
+background:var(--primary);
+
+color:#000;
 
 font-size:12px;
 
@@ -314,15 +1097,9 @@ font-weight:700;
 
 }
 
-/* ======================
-CARD ANIMATION
-====================== */
-
-.product-card{
-
-position:relative;
-
-}
+/* ==========================
+HOVER EFFECT
+========================== */
 
 .product-card::after{
 
@@ -332,59 +1109,132 @@ position:absolute;
 
 inset:0;
 
-border-radius:24px;
-
 pointer-events:none;
 
-transition:.3s;
+border-radius:24px;
+
+opacity:0;
+
+transition:.35s;
+
+box-shadow:0 0 50px rgba(50,255,136,.18) inset;
 
 }
 
 .product-card:hover::after{
 
-box-shadow:0 0 40px rgba(50,255,120,.15) inset;
+opacity:1;
 
 }
 
-/* ======================
-SECTION TITLE
-====================== */
+/* =====================================================
+   RAZHPOINT V2
+   Part 5 - Seller, Statistics & CTA
+===================================================== */
 
-.section-title{
+/* ==========================
+SELLER
+========================== */
 
-text-align:center;
+.seller{
 
-font-size:42px;
-
-font-weight:700;
-
-margin-bottom:12px;
+padding:100px 0;
 
 }
 
-.section-subtitle{
+.seller-box{
+
+background:linear-gradient(135deg,#151c26,#0e131a);
+
+border:1px solid rgba(255,255,255,.06);
+
+border-radius:30px;
+
+padding:60px;
 
 text-align:center;
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.seller-box::before{
+
+content:"";
+
+position:absolute;
+
+width:400px;
+
+height:400px;
+
+background:rgba(50,255,136,.08);
+
+border-radius:50%;
+
+right:-150px;
+
+top:-150px;
+
+filter:blur(20px);
+
+}
+
+.seller-box h2{
+
+font-size:44px;
+
+font-weight:800;
+
+margin-bottom:20px;
+
+position:relative;
+
+z-index:2;
+
+}
+
+.seller-box p{
+
+max-width:700px;
+
+margin:auto;
 
 color:var(--text2);
 
-margin-bottom:60px;
+line-height:1.8;
 
-font-size:17px;
+margin-bottom:35px;
+
+position:relative;
+
+z-index:2;
 
 }
 
-/* ======================
-CATEGORY
-====================== */
+.seller-box .hero-button{
 
-.category{
+justify-content:center;
+
+position:relative;
+
+z-index:2;
+
+}
+
+/* ==========================
+STATISTICS
+========================== */
+
+.statistics{
 
 padding:90px 0;
 
 }
 
-.category-grid{
+.stats-grid{
 
 display:grid;
 
@@ -394,355 +1244,69 @@ gap:25px;
 
 }
 
-.category-card{
+.stats-card{
 
 background:var(--card);
 
-padding:35px;
+border:1px solid rgba(255,255,255,.05);
 
 border-radius:22px;
 
-transition:.35s;
-
-cursor:pointer;
-
-border:1px solid rgba(255,255,255,.05);
+padding:35px;
 
 text-align:center;
-
-}
-
-.category-card:hover{
-
-transform:translateY(-10px);
-
-border-color:var(--green);
-
-box-shadow:0 25px 50px rgba(0,255,120,.15);
-
-}
-
-.category-icon{
-
-font-size:55px;
-
-margin-bottom:20px;
-
-}
-
-.category-card h3{
-
-font-size:24px;
-
-margin-bottom:10px;
-
-}
-
-.category-card p{
-
-color:var(--text2);
-
-}
-
-/* ======================
-PRODUCT
-====================== */
-
-.products{
-
-padding:110px 0;
-
-}
-
-.product-grid{
-
-display:grid;
-
-grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-
-gap:30px;
-
-}
-
-.product-card{
-
-background:var(--card);
-
-border-radius:24px;
-
-overflow:hidden;
 
 transition:.35s;
 
-border:1px solid rgba(255,255,255,.05);
+}
+
+.stats-card:hover{
+
+transform:translateY(-8px);
+
+border-color:var(--primary);
+
+box-shadow:0 25px 50px rgba(50,255,136,.15);
 
 }
 
-.product-card:hover{
+.stats-card h2{
 
-transform:translateY(-10px);
+font-size:40px;
 
-box-shadow:0 25px 60px rgba(0,255,120,.15);
-
-border-color:var(--green);
-
-}
-
-.product-image{
-
-height:220px;
-
-display:flex;
-
-align-items:center;
-
-justify-content:center;
-
-background:linear-gradient(135deg,#183323,#101915);
-
-font-size:70px;
-
-font-weight:800;
-
-color:var(--green);
-
-}
-
-.product-content{
-
-padding:25px;
-
-}
-
-.product-game{
-
-display:inline-block;
-
-padding:6px 14px;
-
-border-radius:50px;
-
-background:#183323;
-
-color:var(--green);
-
-font-size:13px;
-
-font-weight:600;
-
-margin-bottom:15px;
-
-}
-
-.product-title{
-
-font-size:28px;
-
-font-weight:700;
-
-margin-bottom:15px;
-
-}
-
-.product-desc{
-
-color:var(--text2);
-
-line-height:1.8;
-
-margin-bottom:20px;
-
-}
-
-.product-info{
-
-display:flex;
-
-justify-content:space-between;
-
-align-items:center;
-
-margin-bottom:20px;
-
-}
-
-.price{
-
-font-size:30px;
-
-font-weight:800;
-
-color:var(--green);
-
-}
-
-.rating{
-
-color:#FFD700;
-
-font-size:18px;
-
-}
-
-.buy-btn{
-
-display:block;
-
-width:100%;
-
-padding:15px;
-
-text-align:center;
-
-border-radius:15px;
-
-background:linear-gradient(135deg,#42ff88,#16dc61);
-
-color:#111;
-
-font-weight:700;
-
-text-decoration:none;
-
-transition:.3s;
-
-}
-
-.buy-btn:hover{
-
-transform:scale(1.02);
-
-}
-
-/* ======================
-FEATURE BADGE
-====================== */
-
-.badge-hot{
-
-position:absolute;
-
-top:15px;
-
-left:15px;
-
-background:#ff3d3d;
-
-color:white;
-
-padding:8px 14px;
-
-border-radius:30px;
-
-font-size:12px;
-
-font-weight:700;
-
-}
-
-.badge-sale{
-
-position:absolute;
-
-top:15px;
-
-right:15px;
-
-background:var(--green);
-
-color:#111;
-
-padding:8px 14px;
-
-border-radius:30px;
-
-font-size:12px;
-
-font-weight:700;
-
-}
-
-/* ======================
-CARD ANIMATION
-====================== */
-
-.product-card{
-
-position:relative;
-
-}
-
-.product-card::after{
-
-content:"";
-
-position:absolute;
-
-inset:0;
-
-border-radius:24px;
-
-pointer-events:none;
-
-transition:.3s;
-
-}
-
-.product-card:hover::after{
-
-box-shadow:0 0 40px rgba(50,255,120,.15) inset;
-
-}
-
-/* ======================
-SECTION TITLE
-====================== */
-
-.section-title{
-
-text-align:center;
-
-font-size:42px;
-
-font-weight:700;
+color:var(--primary);
 
 margin-bottom:12px;
 
 }
 
-.section-subtitle{
-
-text-align:center;
+.stats-card p{
 
 color:var(--text2);
 
-margin-bottom:60px;
+}
 
-font-size:17px;
+/* ==========================
+FEATURES
+========================== */
+
+.features{
+
+padding:100px 0;
 
 }
 
-/* ======================
-CATEGORY
-====================== */
-
-.category{
-
-padding:90px 0;
-
-}
-
-.category-grid{
+.feature-grid{
 
 display:grid;
 
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
 
-gap:25px;
+gap:30px;
 
 }
 
-.category-card{
+.feature-card{
 
 background:var(--card);
 
@@ -750,27 +1314,21 @@ padding:35px;
 
 border-radius:22px;
 
-transition:.35s;
-
-cursor:pointer;
-
 border:1px solid rgba(255,255,255,.05);
 
-text-align:center;
+transition:.35s;
 
 }
 
-.category-card:hover{
+.feature-card:hover{
 
-transform:translateY(-10px);
+transform:translateY(-8px);
 
-border-color:var(--green);
-
-box-shadow:0 25px 50px rgba(0,255,120,.15);
+border-color:var(--primary);
 
 }
 
-.category-icon{
+.feature-icon{
 
 font-size:55px;
 
@@ -778,131 +1336,262 @@ margin-bottom:20px;
 
 }
 
-.category-card h3{
+.feature-card h3{
 
 font-size:24px;
 
-margin-bottom:10px;
-
-}
-
-.category-card p{
-
-color:var(--text2);
-
-}
-
-/* ======================
-PRODUCT
-====================== */
-
-.products{
-
-padding:110px 0;
-
-}
-
-.product-grid{
-
-display:grid;
-
-grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-
-gap:30px;
-
-}
-
-.product-card{
-
-background:var(--card);
-
-border-radius:24px;
-
-overflow:hidden;
-
-transition:.35s;
-
-border:1px solid rgba(255,255,255,.05);
-
-}
-
-.product-card:hover{
-
-transform:translateY(-10px);
-
-box-shadow:0 25px 60px rgba(0,255,120,.15);
-
-border-color:var(--green);
-
-}
-
-.product-image{
-
-height:220px;
-
-display:flex;
-
-align-items:center;
-
-justify-content:center;
-
-background:linear-gradient(135deg,#183323,#101915);
-
-font-size:70px;
-
-font-weight:800;
-
-color:var(--green);
-
-}
-
-.product-content{
-
-padding:25px;
-
-}
-
-.product-game{
-
-display:inline-block;
-
-padding:6px 14px;
-
-border-radius:50px;
-
-background:#183323;
-
-color:var(--green);
-
-font-size:13px;
-
-font-weight:600;
-
 margin-bottom:15px;
 
 }
 
-.product-title{
-
-font-size:28px;
-
-font-weight:700;
-
-margin-bottom:15px;
-
-}
-
-.product-desc{
+.feature-card p{
 
 color:var(--text2);
 
-line-height:1.8;
+line-height:1.7;
+
+}
+
+/* ==========================
+CALL TO ACTION
+========================== */
+
+.cta{
+
+padding:120px 0;
+
+text-align:center;
+
+}
+
+.cta h2{
+
+font-size:48px;
 
 margin-bottom:20px;
 
 }
 
-.product-info{
+.cta p{
+
+max-width:650px;
+
+margin:auto;
+
+color:var(--text2);
+
+margin-bottom:35px;
+
+line-height:1.8;
+
+}
+
+.cta .buy-btn{
+
+width:auto;
+
+padding:0 40px;
+
+display:inline-flex;
+
+align-items:center;
+
+justify-content:center;
+
+}
+
+/* =====================================================
+   RAZHPOINT V2
+   Part 6 - FAQ & Footer
+===================================================== */
+
+/* ==========================
+FAQ
+========================== */
+
+.faq{
+
+padding:100px 0;
+
+}
+
+.faq-list{
+
+display:flex;
+
+flex-direction:column;
+
+gap:20px;
+
+max-width:900px;
+
+margin:auto;
+
+}
+
+.faq-item{
+
+background:var(--card);
+
+border:1px solid rgba(255,255,255,.06);
+
+border-radius:20px;
+
+padding:30px;
+
+transition:.35s;
+
+}
+
+.faq-item:hover{
+
+border-color:var(--primary);
+
+transform:translateY(-5px);
+
+box-shadow:0 20px 40px rgba(50,255,136,.10);
+
+}
+
+.faq-item h3{
+
+font-size:22px;
+
+margin-bottom:15px;
+
+font-weight:700;
+
+}
+
+.faq-item p{
+
+color:var(--text2);
+
+line-height:1.8;
+
+}
+
+/* ==========================
+FOOTER
+========================== */
+
+footer{
+
+background:#080b10;
+
+border-top:1px solid rgba(255,255,255,.06);
+
+margin-top:100px;
+
+padding:80px 0 30px;
+
+}
+
+.footer-grid{
+
+display:grid;
+
+grid-template-columns:2fr 1fr 1fr 1fr;
+
+gap:40px;
+
+margin-bottom:50px;
+
+}
+
+.footer-title{
+
+font-size:22px;
+
+font-weight:700;
+
+margin-bottom:20px;
+
+}
+
+.footer-text{
+
+color:var(--text2);
+
+line-height:1.8;
+
+}
+
+.footer-links{
+
+display:flex;
+
+flex-direction:column;
+
+gap:12px;
+
+}
+
+.footer-links a{
+
+color:var(--text2);
+
+transition:.3s;
+
+}
+
+.footer-links a:hover{
+
+color:var(--primary);
+
+padding-left:8px;
+
+}
+
+.social{
+
+display:flex;
+
+gap:15px;
+
+margin-top:15px;
+
+}
+
+.social a{
+
+width:45px;
+
+height:45px;
+
+border-radius:50%;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+background:var(--card);
+
+border:1px solid rgba(255,255,255,.05);
+
+transition:.3s;
+
+font-size:18px;
+
+}
+
+.social a:hover{
+
+background:var(--primary);
+
+color:#000;
+
+transform:translateY(-5px);
+
+}
+
+.footer-bottom{
+
+padding-top:30px;
+
+border-top:1px solid rgba(255,255,255,.05);
 
 display:flex;
 
@@ -910,134 +1599,826 @@ justify-content:space-between;
 
 align-items:center;
 
+flex-wrap:wrap;
+
+gap:15px;
+
+}
+
+.footer-copy{
+
+color:var(--text2);
+
+font-size:14px;
+
+}
+
+/* ==========================
+CONTACT CARD
+========================== */
+
+.contact-card{
+
+background:var(--card);
+
+border:1px solid rgba(255,255,255,.05);
+
+padding:25px;
+
+border-radius:18px;
+
+margin-top:20px;
+
+}
+
+.contact-card p{
+
+color:var(--text2);
+
+margin-bottom:10px;
+
+}
+
+.contact-card strong{
+
+color:var(--primary);
+
+}
+
+/* =====================================================
+   RAZHPOINT V2
+   Part 7 - Responsive iPhone, Tablet & Desktop
+===================================================== */
+
+/* ==========================
+TABLET / SMALL DESKTOP
+========================== */
+
+@media (max-width:1100px){
+
+    .container{
+        width:94%;
+    }
+
+    .hero-grid{
+        gap:40px;
+    }
+
+    .hero h1{
+        font-size:54px;
+    }
+
+    .hero-card{
+        width:380px;
+    }
+
+    .footer-grid{
+        grid-template-columns:2fr 1fr 1fr;
+    }
+
+}
+
+
+/* ==========================
+TABLET
+========================== */
+
+@media (max-width:900px){
+
+    /* HEADER */
+
+    .nav{
+        height:auto;
+        min-height:80px;
+        padding:15px 0;
+        flex-wrap:wrap;
+        gap:15px;
+    }
+
+    nav{
+        order:3;
+        width:100%;
+        justify-content:center;
+        gap:25px;
+        padding-top:10px;
+    }
+
+    .nav-right{
+        margin-left:auto;
+    }
+
+    #search{
+        width:200px;
+    }
+
+
+    /* HERO */
+
+    .hero{
+        padding-top:190px;
+        padding-bottom:80px;
+    }
+
+    .hero-grid{
+        grid-template-columns:1fr;
+        text-align:center;
+    }
+
+    .hero-left{
+        max-width:750px;
+        margin:auto;
+    }
+
+    .hero h1{
+        font-size:52px;
+    }
+
+    .hero p{
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    .hero-button{
+        justify-content:center;
+    }
+
+    .hero-info{
+        justify-content:center;
+    }
+
+    .hero-right{
+        margin-top:20px;
+    }
+
+    .hero-card{
+        width:min(500px,100%);
+        text-align:left;
+    }
+
+
+    /* BANNER */
+
+    .banner-slider{
+        padding:45px;
+    }
+
+    .banner-content h2{
+        font-size:36px;
+    }
+
+
+    /* PRODUCTS */
+
+    .product-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+
+    /* FOOTER */
+
+    .footer-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+}
+
+
+/* ==========================
+IPHONE / MOBILE
+========================== */
+
+@media (max-width:700px){
+
+    body{
+        font-size:14px;
+    }
+
+    .container{
+        width:92%;
+    }
+
+
+    /* HEADER */
+
+    header{
+        position:sticky;
+        top:0;
+    }
+
+    .nav{
+        display:flex;
+        flex-direction:column;
+        align-items:stretch;
+        padding:14px 0;
+    }
+
+    .logo{
+        justify-content:center;
+    }
+
+    .logo-box{
+        width:46px;
+        height:46px;
+        border-radius:14px;
+        font-size:18px;
+    }
+
+    .logo h2{
+        font-size:20px;
+    }
+
+    .logo span{
+        font-size:11px;
+    }
+
+    nav{
+        width:100%;
+        overflow-x:auto;
+        justify-content:flex-start;
+        gap:12px;
+        padding:5px 2px 10px;
+        scrollbar-width:none;
+    }
+
+    nav::-webkit-scrollbar{
+        display:none;
+    }
+
+    nav a{
+        white-space:nowrap;
+        background:var(--bg2);
+        border:1px solid var(--border);
+        padding:9px 14px;
+        border-radius:12px;
+        font-size:13px;
+    }
+
+    .nav-right{
+        width:100%;
+        margin:0;
+        display:grid;
+        grid-template-columns:1fr auto;
+    }
+
+    #search{
+        width:100%;
+        min-width:0;
+    }
+
+    .login-btn{
+        padding:0 20px;
+    }
+
+
+    /* HERO */
+
+    .hero{
+        padding-top:55px;
+        padding-bottom:60px;
+    }
+
+    .hero::before{
+        width:350px;
+        height:350px;
+        right:-180px;
+    }
+
+    .hero-grid{
+        gap:40px;
+    }
+
+    .badge{
+        font-size:11px;
+        padding:8px 13px;
+        margin-bottom:18px;
+    }
+
+    .hero h1{
+        font-size:38px;
+        line-height:1.12;
+    }
+
+    .hero p{
+        font-size:15px;
+        line-height:1.7;
+    }
+
+    .hero-button{
+        display:grid;
+        grid-template-columns:1fr 1fr;
+        width:100%;
+        gap:12px;
+        margin-bottom:35px;
+    }
+
+    .buy-btn,
+    .sell-btn{
+        width:100%;
+        padding:0 15px;
+    }
+
+    .hero-info{
+        display:grid;
+        grid-template-columns:repeat(3,1fr);
+        gap:10px;
+    }
+
+    .hero-info h3{
+        font-size:23px;
+    }
+
+    .hero-info p{
+        font-size:11px;
+        line-height:1.4;
+    }
+
+    .hero-card{
+        width:100%;
+        padding:25px;
+        border-radius:22px;
+    }
+
+    .hero-card-title{
+        font-size:22px;
+    }
+
+    .hero-price{
+        font-size:30px;
+    }
+
+
+    /* SECTION */
+
+    .category,
+    .products,
+    .seller,
+    .statistics,
+    .features,
+    .faq{
+        padding:65px 0;
+    }
+
+    .section-title{
+        font-size:30px;
+    }
+
+    .section-subtitle{
+        font-size:14px;
+        margin-bottom:35px;
+    }
+
+
+    /* BANNER */
+
+    .banner{
+        padding:40px 0;
+    }
+
+    .banner-slider{
+        padding:35px 25px;
+        border-radius:22px;
+    }
+
+    .banner-content h2{
+        font-size:30px;
+    }
+
+    .banner-content p{
+        font-size:14px;
+    }
+
+
+    /* CATEGORY */
+
+    .category-grid{
+        grid-template-columns:repeat(2,1fr);
+        gap:14px;
+    }
+
+    .category-card{
+        padding:24px 15px;
+        border-radius:18px;
+    }
+
+    .category-icon{
+        font-size:40px;
+    }
+
+    .category-card h3{
+        font-size:16px;
+    }
+
+    .category-card p{
+        font-size:12px;
+    }
+
+
+    /* PRODUCT */
+
+    .product-grid{
+        grid-template-columns:1fr;
+        gap:20px;
+    }
+
+    .product-image{
+        height:190px;
+        font-size:48px;
+    }
+
+    .product-content{
+        padding:22px;
+    }
+
+    .product-title{
+        font-size:22px;
+    }
+
+    .product-desc{
+        font-size:13px;
+    }
+
+    .price{
+        font-size:23px;
+    }
+
+    .rating{
+        font-size:14px;
+    }
+
+
+    /* SELLER */
+
+    .seller-box{
+        padding:40px 22px;
+        border-radius:22px;
+    }
+
+    .seller-box h2{
+        font-size:29px;
+    }
+
+    .seller-box .hero-button{
+        grid-template-columns:1fr;
+    }
+
+
+    /* FAQ */
+
+    .faq-item{
+        padding:22px;
+    }
+
+    .faq-item h3{
+        font-size:18px;
+    }
+
+    .faq-item p{
+        font-size:13px;
+    }
+
+
+    /* FOOTER */
+
+    footer{
+        margin-top:50px;
+        padding-top:55px;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr;
+        gap:35px;
+    }
+
+    .footer-bottom{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+}
+
+
+/* ==========================
+SMALL IPHONE
+========================== */
+
+@media (max-width:420px){
+
+    .hero h1{
+        font-size:34px;
+    }
+
+    .hero-button{
+        grid-template-columns:1fr;
+    }
+
+    .hero-info{
+        grid-template-columns:1fr 1fr 1fr;
+    }
+
+    .category-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .product-info{
+        gap:10px;
+    }
+
+    .price{
+        font-size:21px;
+    }
+
+    .rating{
+        font-size:12px;
+    }
+
+    .banner-content h2{
+        font-size:26px;
+    }
+
+}
+
+/* =====================================================
+   RAZHPOINT V2
+   Part 8 - Animation, Utility & Finishing
+===================================================== */
+
+/* ==========================
+ANIMATION
+========================== */
+
+@keyframes fadeUp{
+
+0%{
+
+opacity:0;
+transform:translateY(40px);
+
+}
+
+100%{
+
+opacity:1;
+transform:translateY(0);
+
+}
+
+}
+
+@keyframes fadeLeft{
+
+0%{
+
+opacity:0;
+transform:translateX(-40px);
+
+}
+
+100%{
+
+opacity:1;
+transform:translateX(0);
+
+}
+
+}
+
+@keyframes fadeRight{
+
+0%{
+
+opacity:0;
+transform:translateX(40px);
+
+}
+
+100%{
+
+opacity:1;
+transform:translateX(0);
+
+}
+
+}
+
+.hero-left{
+
+animation:fadeLeft .8s ease;
+
+}
+
+.hero-right{
+
+animation:fadeRight .8s ease;
+
+}
+
+.category-card,
+.product-card,
+.seller-box,
+.faq-item{
+
+animation:fadeUp .8s ease;
+
+}
+
+/* ==========================
+HOVER EFFECT
+========================== */
+
+button,
+.buy-btn,
+.sell-btn,
+.login-btn,
+.banner-btn{
+
+transition:.3s ease;
+
+}
+
+button:hover,
+.buy-btn:hover,
+.sell-btn:hover,
+.login-btn:hover,
+.banner-btn:hover{
+
+transform:translateY(-4px);
+
+}
+
+.product-card{
+
+cursor:pointer;
+
+}
+
+.product-card:hover .product-image{
+
+transform:scale(1.05);
+
+}
+
+.product-image{
+
+transition:.35s;
+
+}
+
+/* ==========================
+FOCUS
+========================== */
+
+input:focus{
+
+outline:none;
+
+border:1px solid var(--primary);
+
+box-shadow:0 0 20px rgba(50,255,136,.18);
+
+}
+
+/* ==========================
+TEXT SELECTION
+========================== */
+
+::selection{
+
+background:var(--primary);
+
+color:#000;
+
+}
+
+/* ==========================
+LOADER HIDE
+========================== */
+
+body.loaded #loader{
+
+opacity:0;
+
+visibility:hidden;
+
+transition:.4s;
+
+}
+
+/* ==========================
+UTILITY
+========================== */
+
+.text-center{
+
+text-align:center;
+
+}
+
+.mt-1{
+
+margin-top:10px;
+
+}
+
+.mt-2{
+
+margin-top:20px;
+
+}
+
+.mt-3{
+
+margin-top:30px;
+
+}
+
+.mb-1{
+
+margin-bottom:10px;
+
+}
+
+.mb-2{
+
 margin-bottom:20px;
 
 }
 
-.price{
+.mb-3{
 
-font-size:30px;
-
-font-weight:800;
-
-color:var(--green);
+margin-bottom:30px;
 
 }
 
-.rating{
+.hidden{
 
-color:#FFD700;
-
-font-size:18px;
+display:none;
 
 }
 
-.buy-btn{
+.flex{
 
-display:block;
+display:flex;
 
-width:100%;
+}
 
-padding:15px;
+.grid{
 
-text-align:center;
+display:grid;
 
-border-radius:15px;
+}
 
-background:linear-gradient(135deg,#42ff88,#16dc61);
+/* ==========================
+SCROLL TO TOP
+========================== */
 
-color:#111;
+#scrollTop{
+
+position:fixed;
+
+bottom:25px;
+
+right:25px;
+
+width:55px;
+
+height:55px;
+
+border-radius:50%;
+
+background:linear-gradient(135deg,var(--primary),var(--primary-dark));
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+color:#000;
+
+font-size:22px;
 
 font-weight:700;
 
-text-decoration:none;
+cursor:pointer;
+
+opacity:0;
+
+visibility:hidden;
 
 transition:.3s;
 
-}
-
-.buy-btn:hover{
-
-transform:scale(1.02);
+z-index:999;
 
 }
 
-/* ======================
-FEATURE BADGE
-====================== */
+#scrollTop.show{
 
-.badge-hot{
+opacity:1;
 
-position:absolute;
-
-top:15px;
-
-left:15px;
-
-background:#ff3d3d;
-
-color:white;
-
-padding:8px 14px;
-
-border-radius:30px;
-
-font-size:12px;
-
-font-weight:700;
+visibility:visible;
 
 }
 
-.badge-sale{
-
-position:absolute;
-
-top:15px;
-
-right:15px;
-
-background:var(--green);
-
-color:#111;
-
-padding:8px 14px;
-
-border-radius:30px;
-
-font-size:12px;
-
-font-weight:700;
-
-}
-
-/* ======================
-CARD ANIMATION
-====================== */
-
-.product-card{
-
-position:relative;
-
-}
-
-.product-card::after{
-
-content:"";
-
-position:absolute;
-
-inset:0;
-
-border-radius:24px;
-
-pointer-events:none;
-
-transition:.3s;
-
-}
-
-.product-card:hover::after{
-
-box-shadow:0 0 40px rgba(50,255,120,.15) inset;
-
-}
+/* ==========================
+END
+========================== */
